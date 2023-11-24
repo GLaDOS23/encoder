@@ -99,18 +99,19 @@ def main(new_length,new_length2 , input_file, out_file, dictionary_file):
     write_binary_txt(bin_binary_data, out_file)
     print("Коэффициент сжатия: ", compression_ratio(input_array, bin_binary_data))
     print("Ok")
-    return 0
+    return compression_ratio(input_array, bin_binary_data)
 
 
 
 
 def on_button_click():
     new_length1 = int(new_length.get())
+    new_length3 = int(new_length2.get())
     input_file1 = input_file.get()
     out_file1 = out_file.get()
     dictionary_file1 = dictionary_file.get()
     
-    input_text = main(new_length1, new_length2, input_file1, out_file1, dictionary_file1)
+    input_text = main(new_length1, new_length3, input_file1, out_file1, dictionary_file1)
     result_label.config(text=input_text)
 
 root = tk.Tk()
